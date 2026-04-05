@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Totes2Move — Reusable Moving Totes, Linn & Jones County Iowa</title>
+  <meta name="description" content="Skip the boxes. Totes2Move delivers reusable moving totes to your door in Linn & Jones County, Iowa. We drop off, you pack, we pick up. No cardboard, no tape, no hassle." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lato:wght@400;700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #1B3A5C; --green: #6BBF3E; --gray: #8A9099; --light-bg: #f4f7f4; }
+    body { font-family: 'Lato', sans-serif; color: var(--navy); background: #fff; }
+
+    /* NAV */
+    nav { background: var(--navy); padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 800; color: #fff; text-decoration: none; }
+    .nav-logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { color: rgba(255,255,255,0.85); font-size: 14px; text-decoration: none; font-weight: 600; transition: color 0.15s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: var(--green); color: #fff; padding: 8px 20px; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer; border: none; font-family: 'Lato', sans-serif; text-decoration: none; }
+    .nav-cta:hover { background: #5aaa30; }
+
+    /* HERO */
+    .hero { background: var(--navy); padding: 56px 32px 64px; text-align: center; }
+    .hero h1 { font-family: 'Nunito', sans-serif; font-size: 38px; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 16px; }
+    .hero h1 span { color: var(--green); }
+    .hero p { font-size: 17px; color: rgba(255,255,255,0.8); max-width: 520px; margin: 0 auto 28px; line-height: 1.6; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-white { background-color: #ffffff; color: #1B3A5C; padding: 13px 28px; border-radius: 6px; font-weight: 700; font-size: 15px; cursor: pointer; border: none; font-family: 'Lato', sans-serif; transition: opacity 0.15s; }
+    .btn-white:hover { opacity: 0.9; }
+    .btn-green { background-color: #6BBF3E; color: #ffffff; padding: 13px 28px; border-radius: 6px; font-weight: 700; font-size: 15px; cursor: pointer; border: none; font-family: 'Lato', sans-serif; transition: background 0.15s; }
+    .btn-green:hover { background-color: #5aaa30; }
+
+    /* HOW IT WORKS */
+    .section { padding: 52px 32px; }
+    .section-title { font-family: 'Nunito', sans-serif; font-size: 26px; font-weight: 800; color: var(--navy); text-align: center; margin-bottom: 8px; }
+    .section-sub { text-align: center; color: var(--gray); font-size: 15px; margin-bottom: 36px; }
+    .steps { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+    .step { background: var(--light-bg); border-radius: 12px; padding: 28px 24px; text-align: center; flex: 1; min-width: 180px; max-width: 220px; }
+    .step-num { width: 44px; height: 44px; border-radius: 50%; background: var(--green); color: #fff; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+    .step h3 { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px; color: var(--navy); margin-bottom: 8px; }
+    .step p { font-size: 13px; color: var(--gray); line-height: 1.5; }
+
+    /* PRICING */
+    .pricing-section { background: var(--light-bg); padding: 52px 32px; }
+    .toggle-wrap { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 36px; }
+    .toggle-label { font-weight: 700; font-size: 15px; }
+    .toggle { width: 56px; height: 28px; background: var(--navy); border-radius: 14px; cursor: pointer; position: relative; transition: background 0.2s; border: none; }
+    .toggle-knob { width: 22px; height: 22px; background: #fff; border-radius: 50%; position: absolute; top: 3px; left: 3px; transition: left 0.2s; }
+    .toggle.on .toggle-knob { left: 31px; }
+    .toggle.on { background: var(--green); }
+    .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 600px; margin: 0 auto; }
+    .pkg { background: #fff; border-radius: 12px; padding: 24px 20px; text-align: center; border: 2px solid transparent; position: relative; }
+    .pkg.popular { border-color: var(--green); }
+    .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
+    .pkg-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px; color: var(--navy); margin-bottom: 4px; }
+    .pkg-totes { font-size: 12px; color: var(--gray); margin-bottom: 12px; }
+    .pkg-price { font-family: 'Nunito', sans-serif; font-size: 30px; font-weight: 800; color: var(--navy); }
+    .pkg-price span { font-size: 13px; font-weight: 400; color: var(--gray); }
+    .pkg-btn { margin-top: 14px; width: 100%; padding: 9px; background: var(--navy); color: #fff; border: none; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer; transition: background 0.15s; }
+    .pkg-btn:hover { background: #122840; }
+    .pkg.popular .pkg-btn { background: var(--green); }
+    .pkg.popular .pkg-btn:hover { background: #5aaa30; }
+    .deposit-note { text-align: center; font-size: 13px; color: var(--navy); background: #fff; border: 1.5px solid var(--green); border-radius: 8px; padding: 10px 16px; max-width: 600px; margin: 16px auto 0; }
+    .pricing-note { text-align: center; font-size: 13px; color: var(--gray); margin-top: 12px; }
+
+    /* WHY */
+    .why-grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .why-card { flex: 1; min-width: 200px; max-width: 240px; text-align: center; }
+    .why-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+    .why-icon svg { fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; width: 24px; height: 24px; }
+    .why-card h3 { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px; color: var(--navy); margin-bottom: 8px; }
+    .why-card p { font-size: 13px; color: var(--gray); line-height: 1.5; }
+
+    /* ABOUT */
+    .about-section { background: var(--navy); padding: 52px 32px; }
+    .about-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .about-inner h2 { font-family: 'Nunito', sans-serif; font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 20px; }
+    .about-avatars { display: flex; justify-content: center; gap: 16px; margin-bottom: 24px; }
+    .avatar { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 22px; color: #fff; }
+    .avatar-l { background: var(--green); }
+    .avatar-a { background: rgba(255,255,255,0.2); }
+    .about-inner p { color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.8; }
+    .about-inner p span { color: var(--green); font-weight: 700; }
+
+    /* FAQ */
+    .faq-section { background: var(--light-bg); padding: 52px 32px; }
+    .faq-list { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: #fff; border-radius: 10px; border: 1px solid rgba(27,58,92,0.1); overflow: hidden; }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 18px 20px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q:hover { background: var(--light-bg); }
+    .faq-icon { font-size: 20px; font-weight: 400; color: var(--green); flex-shrink: 0; transition: transform 0.2s; line-height: 1; }
+    .faq-icon.open { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 14px 20px 18px; font-size: 14px; color: #555; line-height: 1.7; border-top: 1px solid rgba(27,58,92,0.07); }
+    .faq-a.open { display: block; }
+
+    /* CONTACT */
+    .contact-section { background: #fff; padding: 52px 32px; }
+    .contact-form { max-width: 620px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .deposit-banner { background: #f0fae8; border: 1.5px solid var(--green); border-radius: 8px; padding: 12px 16px; font-size: 13px; color: var(--navy); line-height: 1.5; text-align: center; }
+    .deposit-banner strong { color: var(--green); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 13px; font-weight: 700; color: var(--navy); }
+    .form-group input, .form-group select, .form-group textarea { padding: 11px 14px; border: 1.5px solid rgba(27,58,92,0.2); border-radius: 8px; font-size: 14px; font-family: 'Lato', sans-serif; color: var(--navy); background: #fff; outline: none; width: 100%; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--green); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .checkbox-group { display: flex; align-items: flex-start; gap: 10px; background: var(--light-bg); border-radius: 8px; padding: 14px; }
+    .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: var(--green); cursor: pointer; }
+    .checkbox-group label { font-size: 13px; color: #555; line-height: 1.5; cursor: pointer; }
+    .form-submit { background-color: #6BBF3E; color: #fff; padding: 14px; border: none; border-radius: 8px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px; cursor: pointer; width: 100%; transition: background 0.15s; }
+    .form-submit:hover { background-color: #5aaa30; }
+    .form-note { text-align: center; font-size: 12px; color: var(--gray); margin-top: 4px; }
+    .form-success { display: none; background: #f0fae8; border: 1.5px solid var(--green); border-radius: 10px; padding: 28px 24px; text-align: center; max-width: 620px; margin: 0 auto; }
+    .form-success h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 20px; color: var(--navy); margin-bottom: 8px; }
+    .form-success p { color: #555; font-size: 14px; line-height: 1.6; }
+
+    /* SERVICE AREA */
+    .service-area { background: var(--light-bg); padding: 48px 32px; text-align: center; }
+    .service-area h2 { font-family: 'Nunito', sans-serif; font-size: 26px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .service-area p { color: var(--gray); font-size: 15px; margin-bottom: 6px; }
+    .service-tags { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+    .service-tag { background: var(--navy); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+
+    /* CTA FOOTER */
+    .cta-footer { background: var(--green); padding: 48px 32px; text-align: center; }
+    .cta-footer h2 { font-family: 'Nunito', sans-serif; font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 12px; }
+    .cta-footer p { color: rgba(255,255,255,0.9); font-size: 15px; margin-bottom: 24px; }
+    .phone-link { display: inline-block; background: var(--navy); color: #fff; padding: 16px 36px; border-radius: 6px; font-weight: 700; font-size: 20px; cursor: pointer; letter-spacing: 0.5px; text-decoration: none; transition: background 0.15s; }
+    .phone-link:hover { background: #122840; }
+
+    /* FOOTER */
+    .footer-bar { background: #0f2338; padding: 24px 32px; text-align: center; }
+    .footer-bar p { color: rgba(255,255,255,0.4); font-size: 12px; margin-bottom: 14px; }
+    .social-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 14px; }
+    .social-link { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.15s; }
+    .social-link:hover { background: rgba(255,255,255,0.2); }
+    .social-link svg { width: 18px; height: 18px; fill: #fff; }
+
+    /* SMOOTH SCROLL */
+    html { scroll-behavior: smooth; }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      nav { flex-wrap: wrap; gap: 12px; padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 28px; }
+      .packages { grid-template-columns: repeat(2, 1fr); }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">totes<span>2</span>move</a>
+    <div class="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="tel:+13194321551">Call to Book</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <h1>Skip the Boxes.<br><span>Move Smarter.</span></h1>
+    <p>We deliver reusable totes right to your door in Linn &amp; Jones County. You pack, move, and we pick them up at your new place. No cardboard. No tape. No hassle.</p>
+    <div class="hero-btns">
+      <button class="btn-green" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">See Packages</button>
+      <button class="btn-white" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">How It Works</button>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div class="section-title">Simple as 1, 2, 3</div>
+    <div class="section-sub">We handle the logistics — you focus on the move</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>We Deliver</h3>
+        <p>Totes dropped off at your current home on your schedule</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>You Pack &amp; Move</h3>
+        <p>Strong, stackable totes — no tape or assembly needed</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>We Pick Up</h3>
+        <p>We collect the totes from your new address. Done.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-title">Simple, Transparent Pricing</div>
+    <div class="section-sub">All packages include totes, dolly, delivery &amp; pickup — no hidden fees</div>
+    <div class="toggle-wrap">
+      <span class="toggle-label" id="lbl-2wk" style="color:var(--navy)">2-week rental</span>
+      <button class="toggle" id="rental-toggle" onclick="toggleRental()" aria-label="Toggle rental period">
+        <div class="toggle-knob"></div>
+      </button>
+      <span class="toggle-label" id="lbl-4wk" style="color:var(--gray)">4-week rental</span>
+    </div>
+    <div class="packages">
+      <div class="pkg">
+        <div class="pkg-name">Studio</div>
+        <div class="pkg-totes">20 totes + dolly</div>
+        <div class="pkg-price" id="p1">$99<span>/rental</span></div>
+        <button class="pkg-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Call to Book</button>
+      </div>
+      <div class="pkg">
+        <div class="pkg-name">1 Bedroom</div>
+        <div class="pkg-totes">30 totes + dolly</div>
+        <div class="pkg-price" id="p2">$119<span>/rental</span></div>
+        <button class="pkg-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Call to Book</button>
+      </div>
+      <div class="pkg popular">
+        <div class="popular-badge">Most Popular</div>
+        <div class="pkg-name">2 Bedroom</div>
+        <div class="pkg-totes">40 totes + dolly</div>
+        <div class="pkg-price" id="p3">$149<span>/rental</span></div>
+        <button class="pkg-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Call to Book</button>
+      </div>
+      <div class="pkg">
+        <div class="pkg-name">3 Bedroom</div>
+        <div class="pkg-totes">55 totes + dolly</div>
+        <div class="pkg-price" id="p4">$189<span>/rental</span></div>
+        <button class="pkg-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Call to Book</button>
+      </div>
+      <div class="pkg">
+        <div class="pkg-name">4 Bedroom</div>
+        <div class="pkg-totes">75 totes + dolly</div>
+        <div class="pkg-price" id="p5">$249<span>/rental</span></div>
+        <button class="pkg-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Call to Book</button>
+      </div>
+      <div class="pkg">
+        <div class="pkg-name">5 Bedroom</div>
+        <div class="pkg-totes">100 totes + dolly</div>
+        <div class="pkg-price" id="p6">$339<span>/rental</span></div>
+        <button class="pkg-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Call to Book</button>
+      </div>
+    </div>
+    <div class="deposit-note">A <strong>$50 refundable security deposit</strong> is due at drop-off via cash, check, or Venmo. Returned in full when totes are back on time and undamaged.</div>
+    <div class="pricing-note">Need something custom? Give us a call — we'll work it out.</div>
+  </section>
+
+  <!-- WHY TOTES2MOVE -->
+  <section class="section" id="why">
+    <div class="section-title">Why Totes2Move?</div>
+    <div class="section-sub">Better than cardboard in every way</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Built tough</h3>
+        <p>Industrial plastic totes hold up to 65 lbs — no flimsy cardboard collapse</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Door to door</h3>
+        <p>Delivered to your old home, picked up from your new one — we do the driving</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <h3>Save money</h3>
+        <p>Often cheaper than buying cardboard, tape, and supplies — with less stress</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </div>
+        <h3>Eco-friendly</h3>
+        <p>Zero cardboard waste — these totes are reused hundreds of times</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <h2>Who We Are</h2>
+      <div class="about-avatars">
+        <div class="avatar avatar-l">L</div>
+        <div class="avatar avatar-a">A</div>
+      </div>
+      <p>We're <span>Logan and Ashlin</span> — a local firefighter and teacher who have called Linn &amp; Jones County home our entire lives. Between the two of us, we've done more than our fair share of moving around the area, and we know firsthand how stressful it can be. We started Totes2Move because we wanted to take at least one thing off your plate — no hunting for boxes, no tape, no hauling cardboard to the recycling bin after. Just sturdy totes delivered to your door and picked up when you're done. <span>Moving is hard enough. The boxes shouldn't be.</span></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-title">Frequently Asked Questions</div>
+    <div class="section-sub">Everything you need to know before you book</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How far in advance do I need to book?<span class="faq-icon">+</span></button>
+        <div class="faq-a">The sooner the better to ensure the appropriate number of totes are reserved for your move — but we request at least 72 hours so there's enough time to find an available drop-off time that works for you.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How does delivery and pickup work?<span class="faq-icon">+</span></button>
+        <div class="faq-a">We'll call to schedule a drop-off time that works for you and deliver the totes at no additional cost. You pack and move to your new location. Once you're all unpacked, just let us know and we'll schedule pickup — or we'll reach out at the end of your rental period to arrange it.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What if I need the totes longer than my rental period?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Please let us know as soon as possible if you need to extend. If the totes are already reserved for another customer, your request may be denied or a late fee of $25 per day may apply. If there's no upcoming reservation, we can extend your rental based on our 4-week pricing.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is there a security deposit?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes — we require a $50 refundable security deposit due at drop-off, payable via cash, check, or Venmo. Your deposit is returned in full when the totes come back on time and in good condition.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What if a tote gets damaged?<span class="faq-icon">+</span></button>
+        <div class="faq-a">We understand accidents happen! We inspect our totes after each rental. If excessive damage is noted, the renter will be held responsible for the cost of repairs or replacement, and this may be deducted from your security deposit.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do I need to clean the totes before pickup?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Nope! We clean and sanitize all totes after each rental, so no cleaning is required on your end. Just leave them empty and we'll take care of the rest.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What areas do you serve?<span class="faq-icon">+</span></button>
+        <div class="faq-a">We currently serve Linn County and Jones County. If you're outside of this area, feel free to reach out — we'll do our best to see if we can accommodate you!</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I pay?<span class="faq-icon">+</span></button>
+        <div class="faq-a">We currently accept cash, check, or Venmo — all due at drop-off. This includes both your rental payment and the $50 refundable deposit. We're working on adding online credit card payments in the future — stay tuned!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-title">Get in Touch</div>
+    <div class="section-sub">Fill out the form and we'll call you back to confirm your reservation</div>
+    <div class="contact-form" id="contact-form">
+      <div class="deposit-banner">A <strong>$50 refundable security deposit</strong> is due at drop-off via cash, check, or Venmo. Returned in full when totes are back on time and undamaged.</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-name">Your name</label>
+          <input id="f-name" type="text" placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label for="f-phone">Phone number</label>
+          <input id="f-phone" type="tel" placeholder="(319) 555-0000" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="f-email">Email address</label>
+        <input id="f-email" type="email" placeholder="jane@email.com" />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-date">Planned move date</label>
+          <input id="f-date" type="date" />
+        </div>
+        <div class="form-group">
+          <label for="f-pkg">Package size</label>
+          <select id="f-pkg">
+            <option value="">— Select a package —</option>
+            <option>Studio (20 totes)</option>
+            <option>1 Bedroom (30 totes)</option>
+            <option>2 Bedroom (40 totes)</option>
+            <option>3 Bedroom (55 totes)</option>
+            <option>4 Bedroom (75 totes)</option>
+            <option>5 Bedroom (100 totes)</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="f-notes">Anything else we should know?</label>
+        <textarea id="f-notes" placeholder="Your current address, new address, any questions..."></textarea>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="rental-agree" />
+        <label for="rental-agree">I understand that a <strong>$50 refundable deposit</strong> is due at drop-off, and that a <strong>$25/day late fee</strong> applies if totes are not returned by the end of my rental period.</label>
+      </div>
+      <button class="form-submit" onclick="submitForm()">Send My Request</button>
+      <div class="form-note">We'll follow up by phone within one business day to confirm your booking. The $50 deposit will be collected at drop-off.</div>
+    </div>
+    <div class="form-success" id="form-success">
+      <h3>Thanks! We got your request.</h3>
+      <p>We'll give you a call within one business day to confirm your reservation and schedule your drop-off time. The $50 refundable deposit will be collected at drop-off.<br><br>Questions in the meantime? Call us at <strong>(319) 432-1551</strong>.</p>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="service-area">
+    <h2>Proudly Serving Linn &amp; Jones County</h2>
+    <p>Local, reliable delivery and pickup throughout the area</p>
+    <p style="font-size:13px;">Moving outside the area? Give us a call — we may be able to help.</p>
+    <div class="service-tags">
+      <span class="service-tag">Cedar Rapids</span>
+      <span class="service-tag">Marion</span>
+      <span class="service-tag">Hiawatha</span>
+      <span class="service-tag">Anamosa</span>
+      <span class="service-tag">Monticello</span>
+      <span class="service-tag">&amp; surrounding areas</span>
+    </div>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <section class="cta-footer">
+    <h2>Ready to make your move easier?</h2>
+    <p>Call us to reserve your totes — it only takes a few minutes.</p>
+    <a class="phone-link" href="tel:+13194321551">(319) 432-1551</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <div class="social-links">
+      <a class="social-link" href="https://facebook.com/totes2move" target="_blank" rel="noopener" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a class="social-link" href="https://instagram.com/totes2move" target="_blank" rel="noopener" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a class="social-link" href="https://tiktok.com/@totes2move" target="_blank" rel="noopener" title="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+      </a>
+    </div>
+    <p>&copy; 2026 Totes2Move &mdash; Linn &amp; Jones County, Iowa &nbsp;|&nbsp; Reusable Moving Totes &amp; Delivery</p>
+  </footer>
+
+  <script>
+    var is4wk = false;
+    var prices2 = [99, 119, 149, 189, 249, 339];
+    var prices4 = [139, 169, 209, 269, 349, 479];
+
+    function toggleRental() {
+      is4wk = !is4wk;
+      var toggle = document.getElementById('rental-toggle');
+      var lbl2 = document.getElementById('lbl-2wk');
+      var lbl4 = document.getElementById('lbl-4wk');
+      if (is4wk) {
+        toggle.classList.add('on');
+        lbl2.style.color = 'var(--gray)';
+        lbl4.style.color = 'var(--navy)';
+      } else {
+        toggle.classList.remove('on');
+        lbl2.style.color = 'var(--navy)';
+        lbl4.style.color = 'var(--gray)';
+      }
+      var prices = is4wk ? prices4 : prices2;
+      for (var i = 1; i <= 6; i++) {
+        document.getElementById('p' + i).innerHTML = '$' + prices[i - 1] + '<span>/rental</span>';
+      }
+    }
+
+    function toggleFaq(btn) {
+      var answer = btn.nextElementSibling;
+      var icon = btn.querySelector('.faq-icon');
+      var isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-a').forEach(function(a) { a.classList.remove('open'); });
+      document.querySelectorAll('.faq-icon').forEach(function(i) { i.classList.remove('open'); });
+      if (!isOpen) { answer.classList.add('open'); icon.classList.add('open'); }
+    }
+
+    function submitForm() {
+      if (!document.getElementById('rental-agree').checked) {
+        alert('Please check the rental agreement box before submitting.');
+        return;
+      }
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
