@@ -344,30 +344,30 @@
   <section class="contact-section" id="contact">
     <div class="section-title">Get in Touch</div>
     <div class="section-sub">Fill out the form and we'll call you back to confirm your reservation</div>
-    <div class="contact-form" id="contact-form">
+    <form class="contact-form" id="contact-form" action="https://formspree.io/f/mkopkjdl" method="POST">
       <div class="deposit-banner">A <strong>$50 refundable security deposit</strong> is due at drop-off via cash, check, or Venmo. Returned in full when totes are back on time and undamaged.</div>
       <div class="form-row">
         <div class="form-group">
           <label for="f-name">Your name</label>
-          <input id="f-name" type="text" placeholder="Jane Smith" />
+          <input id="f-name" name="name" type="text" placeholder="Jane Smith" required />
         </div>
         <div class="form-group">
           <label for="f-phone">Phone number</label>
-          <input id="f-phone" type="tel" placeholder="(319) 555-0000" />
+          <input id="f-phone" name="phone" type="tel" placeholder="(319) 555-0000" required />
         </div>
       </div>
       <div class="form-group">
         <label for="f-email">Email address</label>
-        <input id="f-email" type="email" placeholder="jane@email.com" />
+        <input id="f-email" name="email" type="email" placeholder="jane@email.com" required />
       </div>
       <div class="form-row">
         <div class="form-group">
           <label for="f-date">Planned move date</label>
-          <input id="f-date" type="date" />
+          <input id="f-date" name="move_date" type="date" required />
         </div>
         <div class="form-group">
           <label for="f-pkg">Package size</label>
-          <select id="f-pkg">
+          <select id="f-pkg" name="package" required>
             <option value="">— Select a package —</option>
             <option>Studio (20 totes)</option>
             <option>1 Bedroom (30 totes)</option>
@@ -381,19 +381,15 @@
       </div>
       <div class="form-group">
         <label for="f-notes">Anything else we should know?</label>
-        <textarea id="f-notes" placeholder="Your current address, new address, any questions..."></textarea>
+        <textarea id="f-notes" name="notes" placeholder="Your current address, new address, any questions..."></textarea>
       </div>
       <div class="checkbox-group">
-        <input type="checkbox" id="rental-agree" />
+        <input type="checkbox" id="rental-agree" required />
         <label for="rental-agree">I understand that a <strong>$50 refundable deposit</strong> is due at drop-off, and that a <strong>$25/day late fee</strong> applies if totes are not returned by the end of my rental period.</label>
       </div>
-      <button class="form-submit" onclick="submitForm()">Send My Request</button>
+      <button type="submit" class="form-submit">Send My Request</button>
       <div class="form-note">We'll follow up by phone within one business day to confirm your booking. The $50 deposit will be collected at drop-off.</div>
-    </div>
-    <div class="form-success" id="form-success">
-      <h3>Thanks! We got your request.</h3>
-      <p>We'll give you a call within one business day to confirm your reservation and schedule your drop-off time. The $50 refundable deposit will be collected at drop-off.<br><br>Questions in the meantime? Call us at <strong>(319) 432-1551</strong>.</p>
-    </div>
+    </form>
   </section>
 
   <!-- SERVICE AREA -->
@@ -468,14 +464,6 @@
       if (!isOpen) { answer.classList.add('open'); icon.classList.add('open'); }
     }
 
-    function submitForm() {
-      if (!document.getElementById('rental-agree').checked) {
-        alert('Please check the rental agreement box before submitting.');
-        return;
-      }
-      document.getElementById('contact-form').style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    }
   </script>
 
 </body>
