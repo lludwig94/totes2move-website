@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy: #1B3A5C; --green: #6BBF3E; --gray: #8A9099; --light-bg: #f4f7f4; }
+    :root { --navy: #1B3A5C; --green: #6BBF3E; --gray: #505762; --light-bg: #f4f7f4; }
     body { font-family: 'Lato', sans-serif; color: var(--navy); background: #fff; }
 
     /* NAV */
@@ -20,7 +20,7 @@
     .nav-links { display: flex; gap: 28px; }
     .nav-links a { color: rgba(255,255,255,0.85); font-size: 15px; text-decoration: none; font-weight: 600; transition: color 0.15s; }
     .nav-links a:hover { color: #fff; }
-    .nav-cta { background: var(--green); color: #fff; padding: 10px 24px; border-radius: 6px; font-weight: 700; font-size: 15px; cursor: pointer; border: none; font-family: 'Lato', sans-serif; text-decoration: none; }
+    .nav-cta { background: var(--green); color: var(--navy); padding: 10px 24px; border-radius: 6px; font-weight: 700; font-size: 15px; cursor: pointer; border: none; font-family: 'Lato', sans-serif; text-decoration: none; }
     .nav-cta:hover { background: #5aaa30; }
 
     /* HERO */
@@ -31,7 +31,7 @@
     .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .btn-white { background-color: #ffffff; color: #1B3A5C; padding: 15px 34px; border-radius: 6px; font-weight: 700; font-size: 16px; cursor: pointer; border: none; font-family: 'Lato', sans-serif; transition: opacity 0.15s; }
     .btn-white:hover { opacity: 0.9; }
-    .btn-green { background-color: #6BBF3E; color: #ffffff; padding: 15px 34px; border-radius: 6px; font-weight: 700; font-size: 16px; cursor: pointer; border: none; font-family: 'Lato', sans-serif; transition: background 0.15s; }
+    .btn-green { background-color: #6BBF3E; color: var(--navy); padding: 15px 34px; border-radius: 6px; font-weight: 700; font-size: 16px; cursor: pointer; border: none; font-family: 'Lato', sans-serif; transition: background 0.15s; }
     .btn-green:hover { background-color: #5aaa30; }
 
     /* HOW IT WORKS */
@@ -55,14 +55,14 @@
     .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 960px; margin: 0 auto; }
     .pkg { background: #fff; border-radius: 12px; padding: 28px 24px; text-align: center; border: 2px solid transparent; position: relative; }
     .pkg.popular { border-color: var(--green); }
-    .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; white-space: nowrap; }
+    .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: var(--navy); font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; white-space: nowrap; }
     .pkg-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 17px; color: var(--navy); margin-bottom: 4px; }
     .pkg-totes { font-size: 13px; color: var(--gray); margin-bottom: 14px; }
     .pkg-price { font-family: 'Nunito', sans-serif; font-size: 36px; font-weight: 800; color: var(--navy); }
     .pkg-price span { font-size: 14px; font-weight: 400; color: var(--gray); }
     .pkg-btn { margin-top: 16px; width: 100%; padding: 11px; background: var(--navy); color: #fff; border: none; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer; transition: background 0.15s; }
     .pkg-btn:hover { background: #122840; }
-    .pkg.popular .pkg-btn { background: var(--green); }
+    .pkg.popular .pkg-btn { background: var(--green); color: var(--navy); }
     .pkg.popular .pkg-btn:hover { background: #5aaa30; }
     .deposit-note { text-align: center; font-size: 14px; color: var(--navy); background: #fff; border: 1.5px solid var(--green); border-radius: 8px; padding: 12px 20px; max-width: 960px; margin: 20px auto 0; }
     .pricing-note { text-align: center; font-size: 14px; color: var(--gray); margin-top: 12px; }
@@ -111,7 +111,7 @@
     .checkbox-group { display: flex; align-items: flex-start; gap: 12px; background: var(--light-bg); border-radius: 8px; padding: 16px; }
     .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: var(--green); cursor: pointer; }
     .checkbox-group label { font-size: 14px; color: #555; line-height: 1.6; cursor: pointer; }
-    .form-submit { background-color: #6BBF3E; color: #fff; padding: 16px; border: none; border-radius: 8px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 17px; cursor: pointer; width: 100%; transition: background 0.15s; }
+    .form-submit { background-color: #6BBF3E; color: var(--navy); padding: 16px; border: none; border-radius: 8px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 17px; cursor: pointer; width: 100%; transition: background 0.15s; }
     .form-submit:hover { background-color: #5aaa30; }
     .form-note { text-align: center; font-size: 13px; color: var(--gray); margin-top: 4px; }
     .form-success { display: none; background: #f0fae8; border: 1.5px solid var(--green); border-radius: 10px; padding: 32px 28px; text-align: center; max-width: 720px; margin: 0 auto; }
@@ -127,14 +127,14 @@
 
     /* CTA FOOTER */
     .cta-footer { background: var(--green); padding: 64px max(32px, calc(50% - 580px)); text-align: center; }
-    .cta-footer h2 { font-family: 'Nunito', sans-serif; font-size: 34px; font-weight: 800; color: #fff; margin-bottom: 14px; }
-    .cta-footer p { color: rgba(255,255,255,0.9); font-size: 17px; margin-bottom: 28px; }
+    .cta-footer h2 { font-family: 'Nunito', sans-serif; font-size: 34px; font-weight: 800; color: var(--navy); margin-bottom: 14px; }
+    .cta-footer p { color: var(--navy); font-size: 17px; margin-bottom: 28px; }
     .phone-link { display: inline-block; background: var(--navy); color: #fff; padding: 18px 44px; border-radius: 6px; font-weight: 700; font-size: 22px; cursor: pointer; letter-spacing: 0.5px; text-decoration: none; transition: background 0.15s; }
     .phone-link:hover { background: #122840; }
 
     /* FOOTER */
     .footer-bar { background: #0f2338; padding: 28px max(32px, calc(50% - 580px)); text-align: center; }
-    .footer-bar p { color: rgba(255,255,255,0.4); font-size: 13px; margin-bottom: 14px; }
+    .footer-bar p { color: rgba(255,255,255,0.7); font-size: 13px; margin-bottom: 14px; }
     .social-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 14px; }
     .social-link { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.15s; }
     .social-link:hover { background: rgba(255,255,255,0.2); }
